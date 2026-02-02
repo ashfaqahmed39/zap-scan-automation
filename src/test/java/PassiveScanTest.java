@@ -6,9 +6,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import static utils.ZapUtil.*;
 
-public class ZapTest {
+public class PassiveScanTest {
 
     private WebDriver driver;
 
@@ -43,7 +44,6 @@ public class ZapTest {
         chromeOptions.addArguments("--no-first-run");
         chromeOptions.addArguments("--no-default-browser-check");
 
-        // Use ZAP proxy from ZapUtil
         chromeOptions.setProxy(proxy);
 
         WebDriverManager.chromedriver().setup();
@@ -51,17 +51,15 @@ public class ZapTest {
     }
 
     @Test
-    public void demoTest() {
+    public void testPassiveScan() {
         driver.get(urlToTest);
-        // Wait until passive scan completed
         waitTillPassiveScanCompleted(2000, 10, 120);
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        // Generate report after test
-        generateZapReport(urlToTest);
 
+    @AfterMethod(alwaysRun = true)
+    public void tearDown()  {
+        generateZapReport(urlToTest);
         if (driver != null) {
             driver.quit();
         }

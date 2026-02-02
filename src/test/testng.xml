@@ -3,8 +3,8 @@
 <suite name="Practice Suite">
     <test name="Test Basics 1">
         <classes>
-            <!-- If your class is in a package, use full name like: tests.ZapTest -->
-            <class name="ZapTest"/>
+            <!-- If your class is in a package, use full name like: tests.PassiveScanTest -->
+            <class name="PassiveScanTest"/>
         </classes>
     </test>
 </suite>

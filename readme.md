@@ -43,7 +43,7 @@ Build & run
 
 - `pom.xml` — Maven build + dependencies (TestNG, zap-clientapi, Selenium, WebDriverManager, dotenv)
 - `src/main/java/utils/ZapUtil.java` — helper utilities for interacting with ZAP
-- `src/test/java/ZapTest.java` — TestNG test that exercises the application via ZAP proxy
+- `src/test/java/PassiveScanTest.java` — TestNG test that exercises the application via ZAP proxy
 - `src/test/testng.xml` — TestNG suite configuration
 - `reports/` — generated HTML ZAP reports (timestamped files)
 - `target/` — Maven build output
@@ -62,7 +62,6 @@ Build & run
 
 ## Next steps / suggestions
 
-- Add an example `.env.example` checked into the repo (without secrets).
 - Add CI integration to run scans and archive reports (GitHub Actions, GitLab CI).
 - Expand tests to cover authentication flows and more pages.
 
