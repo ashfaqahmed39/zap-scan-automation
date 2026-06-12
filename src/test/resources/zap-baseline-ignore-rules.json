@@ -1,0 +1,9 @@
+{
+  "ignoreRules": [
+    {
+      "risk": "Informational",
+      "urlRegex": ".*",
+      "reason": "Baseline informational ZAP noise; actionable regressions are controlled by High/Medium/Low thresholds."
+    }
+  ]
+}
