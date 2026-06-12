@@ -60,12 +60,24 @@
                     <version>3.0.0-M8</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>./src/test/testng.xml</suiteXmlFile>
+                            <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
+
+    <profiles>
+        <profile>
+            <id>default-suite</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suiteXmlFile>./src/test/testng.xml</suiteXmlFile>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
